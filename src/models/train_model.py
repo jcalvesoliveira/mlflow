@@ -19,10 +19,10 @@ def parse_args():
         help="learning rate para atualizar o tamanho do passo em cada passo do boosting (default: 0.3)",
     )
     parser.add_argument(
-        "--n-estimators",
+        "--max-depth",
         type=int,
-        default=100,
-        help="Número de árvores. (default: 100)",
+        default=6,
+        help="profundidade maxima das arvores. (default: 100)",
     )
     return parser.parse_args()
 
@@ -32,23 +32,23 @@ def main():
     args = parse_args()
 
     # prepare train and test data
-    df = pd.read_csv('../data/processed/casas.csv')
+    df = pd.read_csv('data/processed/casas.csv')
     X = df.drop('preco', axis=1)
     y = df['preco']
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
     # enable auto logging
+    mlflow.set_tracking_uri("http://localhost:5000") ## incluir para modelos registrados apenas
     mlflow.xgboost.autolog()
 
     dtrain = xgboost.DMatrix(X_train, label=y_train)
     dtest = xgboost.DMatrix(X_test, label=y_test)
 
     with mlflow.start_run():
-
         # ajuste do modelo
         xgb_params = {
             "learning_rate": args.learning_rate,
-            "colsample_bytree": args.colsample_bytree,
+            "max_depth": args.max_depth,
             "seed": 42,
         }
         xgb = xgboost.train(xgb_params, dtrain, evals=[(dtrain, "train")])
