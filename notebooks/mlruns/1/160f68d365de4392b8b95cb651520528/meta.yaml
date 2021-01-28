@@ -1,0 +1,15 @@
+artifact_uri: ./mlruns/1/160f68d365de4392b8b95cb651520528/artifacts
+end_time: 1611857329216
+entry_point_name: ''
+experiment_id: '1'
+lifecycle_stage: active
+name: ''
+run_id: 160f68d365de4392b8b95cb651520528
+run_uuid: 160f68d365de4392b8b95cb651520528
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1611857328643
+status: 3
+tags: []
+user_id: julio

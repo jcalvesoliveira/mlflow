@@ -39,7 +39,7 @@ def main():
 
     # enable auto logging
     mlflow.set_tracking_uri("http://localhost:5000") ## incluir para modelos registrados apenas
-    mlflow.set_experiment('curso-mlflow')
+    mlflow.set_experiment('house-prices-script')
     mlflow.xgboost.autolog()
 
     dtrain = xgboost.DMatrix(X_train, label=y_train)
