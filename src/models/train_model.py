@@ -38,7 +38,7 @@ def main():
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
     # enable auto logging
-    #mlflow.set_tracking_uri("http://localhost:5000") ## incluir para modelos registrados apenas
+    mlflow.set_tracking_uri("http://localhost:5000") ## incluir para modelos registrados apenas
     mlflow.create_experiment('house-prices-script')
     mlflow.xgboost.autolog()
 
