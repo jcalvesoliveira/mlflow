@@ -32,13 +32,13 @@ def main():
     args = parse_args()
 
     # separando em treino e teste
-    df = pd.read_csv('data/processed/casas.csv')
+    df = pd.read_csv('../../data/processed/casas.csv')
     X = df.drop('preco', axis=1)
     y = df['preco']
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
     # enable auto logging
-    mlflow.set_tracking_uri("http://localhost:5000") ## incluir para modelos registrados apenas
+    #mlflow.set_tracking_uri("http://localhost:5000") ## incluir para modelos registrados apenas
     mlflow.set_experiment('house-prices-script')
     mlflow.xgboost.autolog()
 
