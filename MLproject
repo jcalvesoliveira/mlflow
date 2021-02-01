@@ -7,6 +7,6 @@ entry_points:
     parameters:
       learning-rate: {type: float, default: 0.3}
       max-depth: {type: int, default: 6}
-    command: "python src/models/train_model.py --learning-rate: {learning-rate} --max-depth {max-depth}"
+    command: "python src/models/train_model.py --learning-rate {learning-rate} --max-depth {max-depth}"
   predict:
     command: "python src/models/predic_model.py"
