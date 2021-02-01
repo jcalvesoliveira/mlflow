@@ -1,0 +1,4 @@
+artifact_location: file:///mnt/d/Google%20Drive/Jobs/Aulas/Alura/curso-mlflow/mlruns/1
+experiment_id: '1'
+lifecycle_stage: active
+name: house-prices-script

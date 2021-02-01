@@ -1,3 +1,4 @@
+name: house-prices
 channels:
 - defaults
 - conda-forge
