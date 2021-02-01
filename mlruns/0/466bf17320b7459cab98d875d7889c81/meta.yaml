@@ -1,0 +1,15 @@
+artifact_uri: file:///mnt/d/Google%20Drive/Jobs/Aulas/Alura/curso-mlflow/mlruns/0/466bf17320b7459cab98d875d7889c81/artifacts
+end_time: 1612186776660
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+name: ''
+run_id: 466bf17320b7459cab98d875d7889c81
+run_uuid: 466bf17320b7459cab98d875d7889c81
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1612186774128
+status: 4
+tags: []
+user_id: julio
